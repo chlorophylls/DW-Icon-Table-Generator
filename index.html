@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale = 1" name="viewport">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="functions.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	  
+	<!-- TODO -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.AreYouSure/1.9.0/jquery.are-you-sure.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/minty/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <title>Avatar Table Generator by Iris</title>
+  </head>
+
+  <body>
+    <div class="container-fluid text-center header-section">
+      <h1>AVATAR TABLE GENERATOR</h1>
+
+      <p><small>by irisu</small>
+      </p>
+
+      <p>Instantly generate HTML you can copy and paste to display your graphics in a nice, neat, numbered table.</p>
+    </div>
+
+    <!-- START OF UPLOAD SECTION -->
+    <div class="container-fluid upload-header">
+      <center>
+        <h2>UPLOAD</h2>
+      </center>
+    </div>
+
+    <div class="container-fluid upload-section">
+      <div class="row">
+
+        <!-- ADD IMAGE LINKS SECTION -->
+        <div class="col-6 upload-section-left">
+          <legend>Add images</legend>
+          <form>
+
+            <!-- Add images 1-by-1 section -->
+            <div class="form-group row">
+              <label for="singleImageURL" class="col-4 col-form-label">Add images 1-by-1</label>
+
+              <div class="col-8">
+                <div class="input-group">
+                  <input id="singleImageURL" name="singleImageURL" placeholder="Direct link to image" type="text" class="form-control">
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" type="button" id="addLinkButton"><span class="fa fa-plus"></span> Add link</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add imgur album link section -->
+            <div class="form-group row">
+              <label for="imgurAlbumURL" class="col-4 col-form-label">Add from Imgur album</label>
+
+              <div class="col-8">
+                <div class="input-group">
+                  <input id="imgurAlbumURL" name="imgurAlbumURL" placeholder="https://imgur.com/a/" type="text" class="form-control">
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" type="button" id="addImgurButton"><span class="fa fa-plus"></span> Add album</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add multiple image links section -->
+            <div class="form-group row">
+              <label for="multipleImageURLs" class="col-4 col-form-label">Add multiple links</label>
+              <div class="col-8">
+                <textarea id="multipleImageURLs" name="multipleImageURLs" cols="40" rows="4" class="form-control" placeholder="Add multiple image links here. SEPARATE THE LINKS WITH SEMICOLONS (;)."></textarea>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col text-right">
+                <button id="addMultiLinksButton" type="button" class="btn btn-primary"><span class="fa fa-plus"></span> Add multiple links</button>
+              </div>
+            </div>
+
+            <!-- END OF ADD IMAGE LINKS section -->
+          </form>
+        </div>
+
+        <!-- MANAGE IMAGES SECTION -->
+        <div class="col-sm-6 upload-section-right">
+          <legend>Manage images</legend>
+          <form>
+
+            <!-- Total icon count -->
+            <div class="form-group row">
+              <div class="col-4 text-right">
+                <b>Total icon count:</b>
+              </div>
+
+              <div class="col-4 text-left">
+                <span class="badge badge-primary badge-pill" id="imageCounter">0</span>
+              </div>
+            </div>
+
+            <!-- Currently added images selection list -->
+            <div class="form-group row">
+              <label class="col-4 col-form-label" for="currentImages">Currently added images</label>
+
+              <select multiple="" class="col-6 form-control" id="currentImages" multiple="multiple" name="currentImages" size="10">
+              </select>
+
+              <div class="col-2">
+                <button class="btn btn-primary" id="moveUpButton" type="button"><span class="fa fa-arrow-up"></span></button>
+                <br>
+                <br>
+                <button class="btn btn-primary" id="moveDownButton" type="button"><span class="fa fa-arrow-down"></span></button>
+                <br>
+                <br>
+                <button class="btn btn-primary" id="removeButton" type="button"><span class="fa fa-remove"></span></button>
+              </div>
+            </div>
+
+            <!-- END OF CURRENT IMAGES SECTION -->
+          </form>
+        </div>
+
+        <!-- END OF UPLOAD SECTION -->
+      </div>
+    </div>
+
+    <!-- START OF CUSTOMIZE SECTION -->
+    <div class="container-fluid text-center customize-header">
+      <h2>CUSTOMIZE</h2>
+    </div>
+
+    <div class="container-fluid customize-section">
+      <div class="row">
+
+        <!-- TABLE STYLING section -->
+        <div class="col-6 customize-section-left">
+          <form>
+            <legend>Table styling</legend>
+
+            <!-- Images per row input dropdown menu -->
+            <div class="form-group row">
+              <label class="col-4 col-form-label" for="imagesPerRow">Images per row</label>
+
+              <div class="col-3">
+                <select class="form-control" id="imagesPerRow" name="imagesPerRow">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4" selected>4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Table alignment section -->
+            <div class="form-group row">
+              <label class="col-4 col-form-label">Table alignment</label>
+
+              <div class="col-8 btn-group btn-group-toggle" data-toggle="buttons" id="tableAlignmentButtons">
+
+                <label class="btn btn-primary">
+                  <input type="radio" name="tableAlignmentButtons" value="left">
+                  <span class="fa fa-align-left"></span> Left
+                </label>
+                <label class="btn btn-primary active">
+                  <input type="radio" name="tableAlignmentButtons" value="center" checked="checked">
+                  <span class="fa fa-align-center"></span> Center
+                </label>
+                <label class="btn btn-primary">
+                  <input type="radio" name="tableAlignmentButtons" value="right"> Right <span class="fa fa-align-right"></span>
+                </label>
+
+              </div>
+            </div>
+
+            <!-- Table background color input field -->
+            <div class="form-group row">
+              <label class="col-4 col-form-label" for="tableBGColorField">Table background color</label>
+
+              <div class="col-3">
+                <input class="form-control input-md" id="tableBGColorField" name="tableBGColorField" placeholder="#000000" type="text">
+              </div>
+            </div>
+
+            <!-- Table cell spacing section -->
+            <div class="form-group row">
+              <label class="col-4 col-form-label" for="cellSpacingField">Space between cells</label>
+              <div class="col-3">
+                <div class="input-group">
+                  <input id="cellSpacingField" name="cellSpacingField" class="form-control" placeholder="4" value="4" type="text">
+                  <div class="input-group-append">
+                    <span class="input-group-text">px</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Table header section -->
+            <div class="form-group row">
+              <label class="col-4 col-form-label" for="tableHeader">Table header (optional)</label>
+
+              <div class="col-8">
+                <textarea class="form-control" id="tableHeader" name="tableHeader" rows="5" placeholder="Insert your table header here, if you want one. Raw HTML and text only."></textarea>
+              </div>
+            </div>
+            <!-- END OF TABLE STYLING SECTION -->
+          </form>
+        </div>
+
+        <!-- NUMBERING section -->
+        <div class="col-6 customize-section-right">
+          <legend>Numbering</legend>
+          <form>
+            <!-- Number to start from input field -->
+            <div class="form-group row">
+              <label class="col-4 col-form-label" for="startNumber">Number to start from</label>
+
+              <div class="col-2">
+                <input class="form-control input-md" id="startNumberField" name="startNumberField" value="1" type="text">
+              </div>
+            </div>
+
+            <fieldset>
+              <div class="form-group row">
+                <label class="col-4 col-form-label" for="radios">Number position</label>
+
+                <div class="col-8">
+                  <div class="custom-control custom-radio">
+                    <input type="radio" id="radios-0" name="np_radios" class="custom-control-input" value="above" checked="">
+                    <label class="custom-control-label" for="radios-0"> Above image</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input type="radio" id="radios-1" name="np_radios" class="custom-control-input" value="none">
+                    <label class="custom-control-label" for="radios-1"> No numbers</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input type="radio" id="radios-2" name="np_radios" class="custom-control-input" value="under">
+                    <label class="custom-control-label" for="radios-2"> Under image</label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Number font size dropdown menu -->
+            <div class="form-group row">
+              <label class="col-4 col-form-label" for="numberSizeField">Number size</label>
+
+              <div class="col-3">
+                <select class="form-control" id="numberSizeField" name="numberSizeField">
+                  <option value="small">Small</option>
+                  <option value="normal">Normal</option>
+                  <option value="big">Big</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Number font color input field -->
+            <div class="form-group row">
+              <label class="col-4 col-form-label" for="numberColorField">Number font color</label>
+
+              <div class="col-3">
+                <input class="form-control input-md" id="numberColorField" name="numberColorField" placeholder="#000000" type="text">
+              </div>
+            </div>
+            <!-- Number cell background color input field -->
+            <div class="form-group row">
+              <label class="col-4 col-form-label" for="cellBGColorField">Number background color</label>
+
+              <div class="col-3">
+                <input class="form-control input-md" id="cellBGColorField" name="cellBGColorField" placeholder="#ffffff" type="text">
+              </div>
+            </div>
+
+            <!-- Text before number input field -->
+            <div class="form-group row">
+              <label class="col-4 col-form-label" for="optionalPrefix">Text before number</label>
+
+              <div class="col-5">
+                <input class="form-control input-md" id="optionalPrefixField" name="optionalPrefixField" placeholder="Picture, Icon, #, etc." type="text">
+              </div>
+            </div>
+
+            <!-- END of NUMBERING section -->
+          </form>
+        </div>
+      </div>
+
+      <!-- END of CUSTOMIZE section -->
+    </div>
+
+    <!-- LIVE PREVIEW section -->
+    <div class="container-fluid text-center preview-header">
+      <h2>PREVIEW</h2>
+    </div>
+
+    <div class="container-fluid preview-section">
+      <p id="previewOutput"></p>
+    </div>
+
+    <!-- COPY YOUR CODE section -->
+    <div class="container-fluid text-center copy-header">
+      <h2>GET YOUR CODE</h2>
+    </div>
+
+    <div class="container-fluid copy-section">
+      <center>
+        <button class="btn btn-primary" type="button" id="copyButton" onclick="copyToClipboard()">Copy to clipboard <span class="fa fa-clipboard"></span></button>
+        <br>
+        <br>
+
+        <textarea cols="100" rows="7" id="outputTextarea" placeholder="After generating your table, pick up your code here."></textarea>
+      </center>
+    </div>
+  </body>
+
+</html>
