@@ -1,0 +1,68 @@
+.header-section {
+  color: #ffffff;
+  background-color: #78C2AD;
+}
+
+.container-fluid {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.upload-header {
+  background-color: #e0e0e0 !important;
+}
+
+.upload-section {
+  background-color: #f7f7f7 !important;
+}
+
+h1 {
+  color: #00695C !important;
+}
+
+legend {
+  border-bottom: 1px solid #9E9E9E;
+}
+
+.customize-header {
+  background-color: #e0e0e0 !important;
+}
+
+.customize-section {
+  background-color: #f7f7f7 !important;
+}
+
+.preview-header {
+  background-color: #e0e0e0 !important;
+}
+
+.preview-section {
+  font-family: Verdana, Helvetica, Arial, sans-serif !important;
+  background-color: #f7f7f7 !important;
+  min-height: 250px !important;
+}
+
+.copy-header {
+  background-color: #e0e0e0 !important;
+}
+
+
+/** Keeps the labels aligned right, not left like they do on default (as of Bootstrap 4) **/
+
+@media (min-width: 768px) {
+  .form-group.row > .col-form-label {
+    text-align: right;
+  }
+}
+
+.custom-control-label::before {
+  background-color: #dee2e6 !important;
+}
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #78C2AD !important;
+}
+
+.form-control[type=color] {
+  height: auto;
+}
