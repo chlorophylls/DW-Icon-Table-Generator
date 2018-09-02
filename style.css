@@ -46,6 +46,12 @@ legend {
   background-color: #e0e0e0 !important;
 }
 
+/* Textarea placeholder color */
+.form-control::-webkit-input-placeholder { color: #B8B8B8 }  /* WebKit, Blink, Edge */
+.form-control:-moz-placeholder { color: #B8B8B8 }  /* Mozilla Firefox 4 to 18 */
+.form-control::-moz-placeholder { color: #B8B8B8 }  /* Mozilla Firefox 19+ */
+.form-control:-ms-input-placeholder { color: #B8B8B8 }  /* Internet Explorer 10-11 */
+.form-control::-ms-input-placeholder { color: #B8B8B8 }  /* Microsoft Edge */
 
 /** Keeps the labels aligned right, not left like they do on default (as of Bootstrap 4) **/
 

@@ -248,8 +248,6 @@ function updateTable() {
     }
   }
 
-
-
   // If tableColor exists and is not undefined, insert this piece of code into the table start code.
   if (tableColor) {
     tableColor = "background-color: " + tableColor + "; ";
