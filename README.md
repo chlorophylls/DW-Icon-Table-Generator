@@ -10,3 +10,4 @@ Uses HTML, CSS, and Javascript (Bootstrap and jQuery).
 * Multiple image link adding
 * Adding images from Imgur album thanks to integrating the Imgur API
 * Table style customization
+* Ability to preview table
