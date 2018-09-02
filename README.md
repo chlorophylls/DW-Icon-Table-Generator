@@ -1,4 +1,4 @@
-# DW-Icon-Table-Generator
+# Dreamwidth Icon Table Generator
 
 Webapp that instantly generates HTML that you can copy and paste to display your avatars/graphics in a nice, neat, numbered table on Dreamwidth.
 
