@@ -214,6 +214,29 @@
               </div>
             </div>
 
+			<!-- Icon border color -->
+			  <div class="form-group row">
+              <label class="col-4 col-form-label" for="iconBorderColorField">Icon border color</label>
+              <div class="col-3">
+                <div class="input-group">
+                  <input id="iconBorderColorField" name="iconBorderColorField" class="form-control" placeholder="#eeeeee" type="text">
+                </div>
+              </div>
+            </div>
+			  
+			<!-- Icon border size -->
+			<div class="form-group row">
+              <label class="col-4 col-form-label" for="iconBorderSizeField">Icon border padding/size</label>
+              <div class="col-3">
+                <div class="input-group">
+                  <input id="iconBorderSizeField" name="iconBorderSizeField" class="form-control" placeholder="4" value="4" type="text">
+					<div class="input-group-append">
+                    <span class="input-group-text">px</span>
+                  </div>
+                </div>
+              </div>
+            </div>    
+			  
             <!-- Table header section -->
             <div class="form-group row">
               <label class="col-4 col-form-label" for="tableHeader">Table header (optional)</label>
@@ -222,6 +245,7 @@
                 <textarea class="form-control" id="tableHeader" name="tableHeader" rows="5" placeholder="Insert your table header here, if you want one. Raw HTML and text only."></textarea>
               </div>
             </div>
+			  
             <!-- END OF TABLE STYLING SECTION -->
           </form>
         </div>
@@ -275,7 +299,7 @@
 
             <!-- Number font color input field -->
             <div class="form-group row">
-              <label class="col-4 col-form-label" for="numberColorField">Number font color</label>
+              <label class="col-4 col-form-label" for="numberColorField">Number color</label>
 
               <div class="col-3">
                 <input class="form-control input-md" id="numberColorField" name="numberColorField" placeholder="#000000" type="text">
@@ -286,9 +310,22 @@
               <label class="col-4 col-form-label" for="cellBGColorField">Number background color</label>
 
               <div class="col-3">
-                <input class="form-control input-md" id="cellBGColorField" name="cellBGColorField" placeholder="#ffffff" type="text">
+                <input class="form-control input-md" id="cellBGColorField" name="cellBGColorField" placeholder="#dddddd" type="text">
               </div>
             </div>
+
+            <!-- Number cell padding input field -->
+			<div class="form-group row">
+              <label class="col-4 col-form-label" for="numberCellPaddingField">Number cell padding</label>
+              <div class="col-3">
+                <div class="input-group">
+                  <input id="numberCellPaddingField" name="numberCellPaddingField" class="form-control" placeholder="4" value="4" type="text">
+					<div class="input-group-append">
+                    <span class="input-group-text">px</span>
+                  </div>
+                </div>
+              </div>
+            </div> 
 
             <!-- Text before number input field -->
             <div class="form-group row">
@@ -323,7 +360,7 @@
 
     <div class="container-fluid copy-section">
       <center>
-        <button class="btn btn-primary" type="button" id="copyButton" onclick="copyToClipboard()">Copy to clipboard <span class="fa fa-clipboard"></span></button>
+        <button class="btn btn-primary" type="button" id="copyButton" onclick="copyToClipboard()" data-toggle="popover" data-content="Copied to clipboard!">Copy to clipboard <span class="fa fa-clipboard"></span></button>
         <br>
         <br>
 
