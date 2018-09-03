@@ -1,4 +1,4 @@
 // Config variable to hold keys.
 var config = {
-  IMGUR_CLIENT_ID : 'CLIENT_ID'
+  IMGUR_CLIENT_ID : '730dd7ce7561488'
 };
