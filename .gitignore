@@ -1,6 +1,5 @@
 # Keys config file
 config.js
-config.*
 
 # Compiled class file
 *.class
