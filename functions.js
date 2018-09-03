@@ -129,7 +129,7 @@ $(document).ready(function() {
 function requestAlbumImages(albumURL) {
     var albumID = albumURL.substring(20); // Chops off the first 20 characters aka the 'https://imgur.com/a/' part.   
     var requestURL = "https://api.imgur.com/3/album/" + albumID + "/images";
-    var clientID = config.CLIENT_ID;
+    var clientID = config.IMGUR_CLIENT_ID;
     var request = new XMLHttpRequest();
 
     // If it successfully connected, the request is processed.
