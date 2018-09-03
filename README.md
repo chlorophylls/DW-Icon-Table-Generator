@@ -2,7 +2,7 @@
 
 Webapp that instantly generates HTML that you can copy and paste to display your avatars/graphics in a nice, neat, numbered table on Dreamwidth.
 
-Uses HTML, CSS, and Javascript (Bootstrap and jQuery).
+Uses HTML, CSS (Bootstrap), and Javascript (jQuery).
 
 ## Features
 
