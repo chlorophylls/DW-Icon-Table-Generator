@@ -274,9 +274,10 @@ function updateTable() {
         tableColor = "background-color: " + tableColor + "; ";
     }
 
-    if (tableAlign) {
-        tableAlign = "align=\"" + tableAlign;
-    }
+    /* Was supposed to align the table, but float makes things wonky and <table> align doesn't work anymore in HTML5, so it's centered by default.
+	if (tableAlign) {
+        tableAlign = " align:" + tableAlign;
+    }*/
 
     if (tableCellSpacing) {
         tableCellSpacing = "border-collapse: separate; border-spacing: " + tableCellSpacing + "px;"
@@ -288,8 +289,8 @@ function updateTable() {
 
     // This is the end output. The two fields below are basically the same thing, just that one is the raw code and the other is the HTML code put into action.	
 
-    var tableStart = "<table style=\"" + tableCellSpacing + tableColor + "\" " + tableAlign + "\">"; // Table start code.
-    var tableEnd = "\n</table>"; // Table end code.
+    var tableStart = "<center><table style='" + tableCellSpacing + tableColor + tableAlign + "'>"; // Table start code.
+    var tableEnd = "\n</table></center>"; // Table end code.
 
     var fullOutput = tableStart + tableHeader + output + tableEnd; // Puts everything together.
 
