@@ -10,8 +10,8 @@ Uses HTML, CSS (Bootstrap), and Javascript (jQuery).
 * Adding multiple image links at a time, separated by semicolons (;)
 * Adding all images from an Imgur album thanks to integrating the Imgur API
 * Table style customization
-* Icon cell customization
-* Numbering customization
+* Icon cell (spacing, background color) customization
+* Numbering (big or small or regular font size, color) customization
 * Ability to preview table
 
 ## Caveats
