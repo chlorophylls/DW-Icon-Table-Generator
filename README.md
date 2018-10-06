@@ -16,12 +16,9 @@ Uses HTML, CSS (Bootstrap), and Javascript (jQuery).
 
 ## Caveats
 * The table is centered by default. Remove <center> tags manually if you don't want that, and format as you will.
-<<<<<<< HEAD
 	
 ## Leaving feedback
 If you want to leave feedback, either [post it on the Issues page if you have a GitHub account](https://github.com/chlorophylls/Dreamwidth-Icon-Table-Generator/issues), or [leave a comment on this Dreamwidth post] (https://septentrione.dreamwidth.org/6012.html?mode=reply). Anon is on, IP addresses are not logged, etc.
 	
 ## Credit
-* [Minty Bootstrap 4 layout at Bootswatch] (https://bootswatch.com/minty/) 
-=======
->>>>>>> 582952adec1d891d926f0e92d348be4af32429ce
+* [Minty Bootstrap 4 layout at Bootswatch] (https://bootswatch.com/minty/)
