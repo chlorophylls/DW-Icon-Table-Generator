@@ -2,6 +2,9 @@
   color: #ffffff;
   background-color: #78C2AD;
 }
+.header-section a {
+	color: #00695C !important;	
+}
 
 .container-fluid {
   padding-top: 20px;
@@ -53,22 +56,23 @@ legend {
 .form-control:-ms-input-placeholder { color: #B8B8B8 }  /* Internet Explorer 10-11 */
 .form-control::-ms-input-placeholder { color: #B8B8B8 }  /* Microsoft Edge */
 
-/** Keeps the labels aligned right, not left like they do on default (as of Bootstrap 4) **/
-
-@media (min-width: 768px) {
-  .form-group.row > .col-form-label {
-    text-align: right;
-  }
-}
-
 .custom-control-label::before {
   background-color: #dee2e6 !important;
 }
-
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+	background-color: #78C2AD !important;	
+}
 .custom-radio .custom-control-input:checked ~ .custom-control-label::before {
   background-color: #78C2AD !important;
 }
 
 .form-control[type=color] {
   height: auto;
+}
+
+/** Keeps the labels aligned right, not left like they do on default (as of Bootstrap 4) **/
+@media (min-width: 768px) {
+  .form-group.row > .col-form-label {
+    text-align: right;
+  }
 }

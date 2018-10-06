@@ -28,12 +28,13 @@
 	<div class="container-fluid text-center header-section">
 		<h1>DREAMWIDTH ICON TABLE GENERATOR</h1>
 
-		<small><p>by Chlor</p>
-		<p>If you have any questions, bugs to report, suggestions, or have any other reasons to contact me about this webapp, comment on this post here.</p>
+		<small>
+			<p>by Chlor</p>
+			<p>If you have any questions, bugs to report, suggestions, or other reasons to contact me about this webapp, <a href="https://septentrione.dreamwidth.org/6012.html">comment on this post here</a>.</p>
 		</small>
 
 		<p>Instantly generate HTML you can copy and paste to display your graphics in a nice, neat, numbered table in a Dreamwidth post.</p>
-		
+
 	</div>
 
 	<!-- START OF UPLOAD SECTION -->
@@ -169,9 +170,16 @@
 								<option value="10">10</option>
 							</select>
 						</div>
+						<!-- Add table generator credit link? option -->
+						<div class="col-5 form-group">
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" class="custom-control-input" id="tableCredit" checked="checked">
+								<label class="custom-control-label" for="tableCredit">Add generator credit line?</label>
+							</div>
+						</div>
 					</div>
 
-			<!-- Table alignment section (REMOVED SINCE IT'S BORKED IN HTML5, need to use CSS, centers table by default)
+					<!-- Table alignment section (REMOVED SINCE IT'S BORKED IN IN-LINE HTML5, need to use CSS, centers table by default)
             <div class="form-group row">
               <label class="col-4 col-form-label">Table alignment</label>
 
