@@ -19,7 +19,7 @@ Uses HTML, CSS (Bootstrap), and Javascript (jQuery).
 	
 ## Leaving feedback
 If you want to leave feedback, either:
-* [post it on the Issues page if you have a GitHub account](https://github.com/chlorophylls/Dreamwidth-Icon-Table-Generator/issues), or 
+* [Post it on the Issues page if you have a GitHub account](https://github.com/chlorophylls/Dreamwidth-Icon-Table-Generator/issues), or 
 * [Leave a comment on this Dreamwidth post](https://septentrione.dreamwidth.org/6012.html?mode=reply). Anonymous posting is on, IP addresses are not logged, comments are not screened, etc.
 	
 ## Credit
