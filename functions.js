@@ -58,7 +58,7 @@ $(document).ready(function () {
 	// Clicking the + Add album button (addImgurButton) adds all the images in the album linked by the URL input (imgurAlbumURL) to currentImages.
 	$('#addImgurButton').click(function () {
 		var link = $('#imgurAlbumURL').val();
-		if (link.includes("imgur.com/a/")) { // If the input field does not start with 'https://imgur.com/a/', then it's not an Imgur album...probably.
+		if (link.indexOf("imgur.com/a/") >= 0) { // If the input field does not include 'imgur.com/a/', then it's not an Imgur album...probably.
 			requestAlbumImages(link);
 			imageCountUpdate();
 			updateTable(); // Updates table in preview section.
@@ -66,7 +66,7 @@ $(document).ready(function () {
 			$('#imgurAlbumURL').val(''); // Resets the input field. Might take out later? Ask for feedback.
 
 		} else { // Else, it doesn't have "imgur.com/a/" in the URL and thus is probably not an album.
-			alert("Not a valid Imgur album! ...Probably.");
+			alert("Not a valid Imgur album! ...Probably. \nCheck to make sure there is an 'imgur.com/a/' in the link.");
 		}
 	});
 
@@ -125,9 +125,10 @@ $(document).ready(function () {
 
 // Requests all images from an Imgur album by grabbing the link from the input field and then sending a XMLHttpRequest
 // to the API's endpoint, using processRequest().
-// Authorization: Client-ID YOUR_CLIENT_ID
+// Authorization: clientID = YOUR_CLIENT_ID
 function requestAlbumImages(albumURL) {
-	var albumID = albumURL.substring(20); // Chops off the first 20 characters aka the 'https://imgur.com/a/' part.   
+	var index = albumURL.lastIndexOf('/'); 			// Grabs the album ID by taking the characters that follow the last '/' in the URL. 
+	var albumID = albumURL.substring(index + 1); 
 	var requestURL = "https://api.imgur.com/3/album/" + albumID + "/images";
 	var clientID = "4e821e6278838b7";
 	var request = new XMLHttpRequest();
