@@ -16,6 +16,13 @@ Uses HTML, CSS (Bootstrap), and Javascript (jQuery).
 
 ## Notes
 * The table is centered by default. Remove <center> tags manually if you don't want that, and format as you will.
+
+## Imgur API Rate limit
+* This webapp only makes GET requests, not POST requests.
+* The Imgur API rate limit is [described here](https://apidocs.imgur.com/#rate-limits) as follows: 
+> The Imgur API uses a credit allocation system to ensure fair distribution of capacity. Each application can allow *approximately 1,250 uploads per day or approximately 12,500 requests per day.* If the daily limit is hit five times in a month, then the app will be blocked for the rest of the month. (...) We also limit each user (via their IP Address) for each application, this is to ensure that no single user is able to spam an application.
+* What this means is that, for each day, this application allows for up to 500 different users to to process 25 Imgur albums each. Or, 1 obsessive user to process 12500 Imgur albums. Or 125 users to process 100 albums. Do the math, etc.
+* Either way, based on usage statistics, the application will probably never hit this daily 12,500 request limit, so don't worry about it too much.
 	
 ## Leaving feedback
 If you want to leave feedback, either:
