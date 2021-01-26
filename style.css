@@ -57,6 +57,10 @@ legend {
 .form-control:-ms-input-placeholder { color: #B8B8B8 }  /* Internet Explorer 10-11 */
 .form-control::-ms-input-placeholder { color: #B8B8B8 }  /* Microsoft Edge */
 
+#multipleImageURLs textarea {
+	overflow-y: scroll;
+}
+
 .custom-control-label::before {
   background-color: #dee2e6 !important;
 }

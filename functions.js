@@ -121,6 +121,21 @@ $(document).ready(function () {
 			$('[data-toggle="popover"]').popover('hide');
 		}, 2000);
 	});
+    
+    // Checks for the state of the custom separator enabling checkbox and switches the state of the input field accordingly.
+    $('#customSepCheck').change(function() {
+        var csField = $('#customSepField');
+        
+        if($('#customSepCheck').prop('checked')) {
+            // If the check box for enabling custom separator is checked, enables the field for user input.
+            csField.parent().prop("disabled", false);
+            csField.attr("placeholder", ";");
+        } else { 
+            // Else it's not checked, and the input field is disabled.
+            csField.parent().prop("disabled", true);
+            csField.removeAttr("placeholder");
+        }     
+    });
 
 });
 
@@ -164,10 +179,18 @@ function processRequest(response_text) {
 	}
 }
 
-// Adds multiple links from the multipleImageURLs input field to currentImages. Split up by semicolons (;) for the time being.
+// Adds multiple links from the multipleImageURLs input field to currentImages. Split up by new lines as default, one per line.
 function addMultiLinks() {
-	var input = $('#multipleImageURLs').val();
-	var splitInput = input.split(";");
+	var input = $('#multipleImageURLs').val(); // Strings in the textarea for multiple images.
+    var splitInput = "";
+    
+    // First checks for whether the "Use custom separator" checkbox is checked. If so, use custom separator.
+    if ($('#customSepCheck').prop('checked')){
+        var customSeparator = $('#customSepField').val();
+        splitInput = input.split(customSeparator);
+    } else { // Else, use newline (\n) as default separator.
+        splitInput = input.split("\n");
+    }
 
 	for (var i in splitInput) { // For every item in the splitInput array, add the link to currentImages.
 		var link = splitInput[i];

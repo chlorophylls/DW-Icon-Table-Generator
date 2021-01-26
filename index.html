@@ -5,6 +5,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta content="width=device-width, initial-scale = 1" name="viewport">
+	<title>Icon Table Generator by Chlor</title>
+	<meta name="description" content="Instantly generate HTML you can copy and paste to display your icons/graphics in a nice, neat, numbered customizable table in a Dreamwidth post or anywhere else.">
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -12,7 +14,7 @@
 	<script src="functions.js"></script>
 
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
+	
 	<!-- SCRIPTS -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.AreYouSure/1.9.0/jquery.are-you-sure.min.js"></script>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -20,20 +22,16 @@
 
 	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/minty/bootstrap.min.css" rel="stylesheet">
 	<link href="style.css" rel="stylesheet">
-
-	<title>DW Icon Table Generator by Chlor</title>
 </head>
 
 <body>
 	<div class="container-fluid text-center header-section">
 		<h1>DREAMWIDTH ICON TABLE GENERATOR</h1>
-
 		<small>
 			<p>by Chlor</p>
 			<p>If you have any questions, bugs to report, suggestions, or other reasons to contact me about this webapp, <a href="https://septentrione.dreamwidth.org/6012.html">comment on this post here</a>.</p>
 		</small>
-
-		<p>Instantly generate HTML you can copy and paste to display your graphics in a nice, neat, numbered table in a Dreamwidth post.</p>
+		<p>Instantly generate HTML you can copy and paste to display your graphics in a nice, neat, numbered table in a Dreamwidth post or anywhere else.</p>
 
 	</div>
 
@@ -84,15 +82,35 @@
 					<div class="form-group row">
 						<label for="multipleImageURLs" class="col-4 col-form-label">Add multiple links</label>
 						<div class="col-8">
-							<textarea id="multipleImageURLs" name="multipleImageURLs" cols="40" rows="4" class="form-control" placeholder="Add multiple image links here. SEPARATE THE LINKS WITH SEMICOLONS (;)."></textarea>
+							<textarea id="multipleImageURLs" name="multipleImageURLs" cols="40" rows="6" class="form-control" placeholder="Add multiple image links here. Example:&#10;https://www.example.com/link1&#10;https://www.example.com/link2&#10;https://www.example.com/link3&#10;LINKS ARE SEPARATED BY NEW LINES BY DEFAULT.&#10Check the box below to use a custom separator."></textarea>
 						</div>
 					</div>
-					<div class="form-group row">
-						<div class="col text-right">
-							<button id="addMultiLinksButton" type="button" class="btn btn-primary"><span class="fa fa-plus"></span> Add multiple links</button>
+                    
+                    <!-- Add custom separator option for multiple links -->
+                    <div class="form-group row">
+						<div class="col-4 text-right">
+                            <label for="customSep" class="col-form-label">Use custom separator?</label>
+                        </div>
+						<div class="col-8">
+                            <div class="form-group row">
+                                <div class="col-1 align-self-center">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customSepCheck">
+                                        <label class="custom-control-label" for="customSepCheck"></label>
+                                    </div>
+                                </div>                                
+                                <div class="col-3">
+                                    <fieldset disabled="">
+                                        <input class="form-control input-md" id="customSepField" name="customSepField" type="text">
+                                    </fieldset>
+                                </div>
+                                <div class="col text-right">
+                                    <button id="addMultiLinksButton" type="button" class="btn btn-primary"><span class="fa fa-plus"></span> Add multiple links</button>
+                                </div>
+                            </div>
 						</div>
 					</div>
-
+                    
 					<!-- END OF ADD IMAGE LINKS section -->
 				</form>
 			</div>
@@ -117,7 +135,7 @@
 					<div class="form-group row">
 						<label class="col-4 col-form-label" for="currentImages"><b>Currently added images</b><br><br>
 							<p class="text-info"><small>Select an image (or multiple, by holding Shift or dragging the mouse button) and click the arrow buttons to rearrange. <br>Click the X button to delete selected image(s).</small></p></label>
-						<select multiple="" class="col-6 form-control" id="currentImages" multiple="multiple" name="currentImages" size="10">
+						<select multiple="" class="col-6 form-control" id="currentImages" multiple="multiple" name="currentImages" size="12">
 						</select>
 						<div class="col-2">
 							<button class="btn btn-primary" id="moveUpButton" type="button"><span class="fa fa-arrow-up"></span></button>
